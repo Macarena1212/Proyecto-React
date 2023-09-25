@@ -1,14 +1,17 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-
-
-const inter = Inter({ subsets: ['latin'] })
+import Head from "next/head";
+import styles from "@/styles/Home.module.css";
+import React from "react";
+import ShoppingCart from "../components/organisms/ShoppingCart";
+import { Inter } from "next/font/google";
+import Navbar from "@/components/molecules/Navbar";
+import Footer from '@/components/molecules/Footer';
+import GrupoDeImagenes from '@/components/organisms/GrupoDeImagenes'
+const inter = Inter({ subsets: ["latin"] });
 
 
 
 const index = () => {
+  
   return (
     <>
       <Head>
@@ -18,34 +21,36 @@ const index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      
       <main>
+        {/* BARRA DE NAVEGACIÓN */}
+        <div><Navbar/></div>
 
-        {/* NAVBAR */}
-        <div className={styles.navbar}></div>
+        {/* INICIO */}
+        <div className={styles.inicio}> </div>
 
-        {/* HOME */}
-        <div className={styles.home}></div>
+        {/* CLÁSICOS */}
+        <div> <ShoppingCart/> </div>
 
-        {/* NEWS */}
-        <div className={styles.news}></div>
+        {/* NOVEDADES */}
+        <div></div>
 
-        {/* CATEGORIES */}
-        <div className={styles.categories}></div>
-
-        {/* INFORMATION */}
-        <div className={styles.information}></div>
-
-        {/* IMAGES */}
-        <div className={styles.images}></div>
+        {/* BENEFICIOS Y LECTURA */}
+        <div>
+        <h2 className='h2-beneficios-lectura'>La lectura como un estilo de vida</h2>
+        <section className='section-beneficios-lectura'>
+          <div className='divs-beneficios-lectura'>
+          <GrupoDeImagenes/>
+          </div>
+        </section>
+        </div>
 
         {/* FOOTER */}
-        <div className={styles.footer}></div>
+        <div><Footer /></div>
 
-      
+
       </main>
     </>
-  )
-}
+  );
+};
 
-export default index
+export default index;
